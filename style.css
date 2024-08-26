@@ -1,0 +1,113 @@
+body {
+  background-color: Black;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.grid {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+  perspective: 150vh;
+}
+
+.grid-fade {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background: linear-gradient(#000000ff, #00000033 80%, #00000000);
+}
+
+.grid-lines {
+  width: 100%;
+  height: 200%;
+  background-image: linear-gradient(to right, #333 0.3vh, transparent 0),
+    linear-gradient(to bottom, #333 0.3vh, transparent 0);
+  background-size: 5vh 5vh;
+  background-repeat: repeat;
+  transform-origin: 100% 0 0;
+  transform: rotateX(70deg);
+}
+
+#whatlook {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+#whatlook div {
+  float: left;
+}
+
+.eye {
+  margin-left: 10px;
+}
+
+.eye1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50% / 45%;
+  background: radial-gradient(
+    closest-corner,
+    white 0,
+    #c0c0c0 50%,
+    grey 78%,
+    black 100%
+  );
+  box-shadow: 0 0 3.5vh grey;
+  position: relative;
+
+  animation-duration: 2s;
+  animation-name: floating;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.eye2 {
+  width: 60%;
+  aspect-ratio: 1;
+  background-color: black;
+  border-radius: 50%;
+  position: relative;
+}
+
+.eye3 {
+  width: 32%;
+  height: 32%;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  left: 45%;
+  top: 14%;
+}
+
+.question {
+  position: relative;
+  font-size: 10vh;
+  display: inline-block;
+  height: fit-content;
+  text-shadow: 0 0 3vh #222;
+
+  animation-delay: 0.5s;
+  animation-duration: 2s;
+  animation-name: floating;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, -2vh);
+  }
+  100% {
+    transform: translate(0, 2vh);
+  }
+}
